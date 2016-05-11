@@ -17,7 +17,14 @@ treeNode* makeRootNode(char data, treeNode* leftNode, treeNode* rightNode)
  	return root;
 }
 
-
+void preorder(treeNode* root)   //이진 트리에 대한 전위 순회 연산
+{
+ 	if(root){
+  	   printf("%c", root->data);
+ 	   preorder(root->left);
+ 	   preorder(root->right);
+ 	}
+}
 
 void main()
 {
@@ -35,6 +42,9 @@ void main()
  	treeNode* n2 = makeRootNode('C', n5, n4);
 
 	treeNode* n1 = makeRootNode('A', n3, n2);
+
+ 	printf("\n preorder : ");
+ 	preorder(n1);
 
  	getchar();
 }
